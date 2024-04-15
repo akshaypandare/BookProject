@@ -7,7 +7,7 @@ pipeline {
         stage('Build Maven'){
             steps {
                 checkout scmGit(branches: [[name: '*/develop']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/akshaypandare/BookProject']])
-                sh 'mvn clean install'
+                bat 'mvn clean install'
             }
         }
         stage('Build Docker Image') {
